@@ -21,3 +21,18 @@ If this project does not contain `.aegis-core/`:
 
 Never duplicate or rewrite the whole policy text into the conversation.
 Always reference `.aegis-core/*` files.
+## Enforcement Rules
+
+Before any execution:
+
+1. Verify `.aegis-core/VERSION.txt` exists.
+2. If missing, STOP and request deployment.
+3. Do not proceed without policy validation.
+
+During execution:
+
+- If a nested call is required → STOP.
+- If full-project scan is attempted → STOP.
+- If diff is insufficient → output NEED_MORE_CONTEXT only.
+
+Never silently fallback to full analysis.
