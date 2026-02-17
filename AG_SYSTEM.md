@@ -36,3 +36,5 @@ During execution:
 - If diff is insufficient → output NEED_MORE_CONTEXT only.
 
 Never silently fallback to full analysis.
+Policy Validation Mode:
+- Always output ACTIVE_POLICY_VERSION from VERSION.txt
